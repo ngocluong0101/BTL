@@ -212,9 +212,5 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
             dgvOrder.Rows.Clear();
         }
-        private void test()
-        {
-
-        }
     }
 }
