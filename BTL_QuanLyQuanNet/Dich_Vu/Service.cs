@@ -32,6 +32,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             this.Refresh();
 
         }
+
         public void gan_su_kien_click()
         {
             foreach (Control ctrl in this.Controls)
@@ -76,56 +77,46 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
                     }
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-                //if (ctrl is TabControl tabcontrol)
-                //{
-                //    foreach (TabPage tbp in tabcontrol.TabPages)
-                //    {
-                //        foreach (Control innerCtrl in tbp.Controls)
-                //        {
-                //            if (innerCtrl is FlowLayoutPanel flp)
-                //            {
-                //                foreach (Control tmp in flp.Controls)
-                //                {
-                //                    if (tmp is Panel pn)
-                //                    {
-                //                        foreach (Control res in pn.Controls)
-                //                        {
-                //                            if (res is PictureBox pb)
-                //                            {
-                //                                pb.Click += PictureBox_Click;
-                //                                MessageBox.Show("dsdas");
-                //                            }
-                //                        }
-                //                    }
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
-                //if (ctrl is Panel panel)
-                //{
-                //    foreach (Control innerCtrl in panel.Controls)
-                //    {
-                //        if (innerCtrl is PictureBox picBox)
-                //        {
-                //            picBox.Click += PictureBox_Click; // Gán sự kiện Click
-                //        }
-                //    }
-                //}
             }
         }
+/*
+        if (ctrl is TabControl tabcontrol)
+        {
+            foreach (TabPage tbp in tabcontrol.TabPages)
+            {
+                foreach (Control innerCtrl in tbp.Controls)
+                {
+                    if (innerCtrl is FlowLayoutPanel flp)
+                    {
+                        foreach (Control tmp in flp.Controls)
+                        {
+                            if (tmp is Panel pn)
+                            {
+                                foreach (Control res in pn.Controls)
+                                {
+                                    if (res is PictureBox pb)
+                                    {
+                                        pb.Click += PictureBox_Click;
+                                        MessageBox.Show("dsdas");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (ctrl is Panel panel)
+        {
+            foreach (Control innerCtrl in panel.Controls)
+            {
+                if (innerCtrl is PictureBox picBox)
+                {
+                    picBox.Click += PictureBox_Click; // Gán sự kiện Click
+                }
+            }
+        }
+*/
         private void Service_Load(object sender, EventArgs e)
         {
             gan_su_kien_click();

@@ -84,7 +84,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
             Label lblGia = new Label
             {
-                Text = giaMon + " VND",
+                Text = giaMon + "",
                 Font = new Font("Arial", 10, FontStyle.Bold),
                 Location = new Point(10, 200),
                 ForeColor = Color.Red,
@@ -114,12 +114,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                         }
                     }
                 }
-                //{
-                //    //tab.Controls.Add(panelMonAn);
-                //    //panelMonAn.BringToFront();
-                //    //found = true;
-                //    //break;
-                //}
             }
 
             if (!found)
