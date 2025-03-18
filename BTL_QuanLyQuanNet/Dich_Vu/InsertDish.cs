@@ -73,9 +73,10 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Image = hinhAnh
             };
-
+            pic.Click += mainForm.PictureBox_Click;
             Label lblTen = new Label
             {
+                Name = "lblTenMon",
                 Text = tenMon,
                 Font = new Font("Arial", 10, FontStyle.Bold),
                 Location = new Point(10, 170),
@@ -84,6 +85,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
             Label lblGia = new Label
             {
+                Name = "lblGiaMon",
                 Text = giaMon + "",
                 Font = new Font("Arial", 10, FontStyle.Bold),
                 Location = new Point(10, 200),
@@ -126,6 +128,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             }
 
             this.Close();
+
         }
     }
 }
