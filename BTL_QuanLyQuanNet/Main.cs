@@ -15,6 +15,11 @@ namespace BTL_QuanLyQuanNet
 {
     public partial class Main: Form
     {
+        private Form formTinhTrangMay;
+        private Form formKhachHang;
+        private Form formService;
+        private Form formThongKe;
+        private Form formQuanLyThoiGian;
         private Form CurrentChildForm;
         public Main()
         {
@@ -22,20 +27,25 @@ namespace BTL_QuanLyQuanNet
             this.Size = this.ClientSize;
         }
 
-        private void OpenChildForm(Form ChildForm)
+        private void OpenChildForm(ref Form ChildForm,Form newForm)
         {
+            if (CurrentChildForm != null && CurrentChildForm == ChildForm)
+                return;
             if (CurrentChildForm != null)
             {
-                CurrentChildForm.Close();
+                CurrentChildForm.Hide();
+            }
+            if (ChildForm == null)
+            {
+                ChildForm = newForm;
+                ChildForm.TopLevel = false;
+                ChildForm.FormBorderStyle = FormBorderStyle.None;
+                ChildForm.Dock = DockStyle.Fill;
+                panelChildForm.Controls.Add(ChildForm);
             }
             CurrentChildForm = ChildForm;
-            ChildForm.TopLevel = false;
-            ChildForm.FormBorderStyle = FormBorderStyle.None;
-            ChildForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(ChildForm);
-            panelChildForm.Tag = ChildForm;
-            ChildForm.BringToFront();
-            ChildForm.Show();
+            CurrentChildForm.BringToFront();
+            CurrentChildForm.Show();
         }
 
 
@@ -56,13 +66,13 @@ namespace BTL_QuanLyQuanNet
 
         private void btnTinhtrangmay_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TinhTrangMay());
+            OpenChildForm(ref formTinhTrangMay, new TinhTrangMay());
             txtXinChao.Text = btnTinhtrangmay.Text;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new TinhTrangMay());
+            OpenChildForm(ref formTinhTrangMay, new TinhTrangMay());
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -72,13 +82,13 @@ namespace BTL_QuanLyQuanNet
 
         private void btnKhachhang_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new KhachHang());
+            OpenChildForm(ref formKhachHang, new KhachHang());
             txtXinChao.Text = btnKhachhang.Text;
         }
 
         private void btnDichvu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Service());
+            OpenChildForm(ref formService, new Service());
             txtXinChao.Text = btnDichvu.Text;
         }
 
@@ -91,13 +101,13 @@ namespace BTL_QuanLyQuanNet
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ThongKe());
+            OpenChildForm(ref formThongKe, new ThongKe());
             txtXinChao.Text = btnThongKe.Text;
         }
 
         private void btnQuanlythoigian_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new QuanLyThoiGian());
+            OpenChildForm(ref formQuanLyThoiGian, new QuanLyThoiGian());
             txtXinChao.Text = btnQuanlythoigian.Text;
         }
     }
