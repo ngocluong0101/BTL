@@ -35,88 +35,35 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
         public void gan_su_kien_click()
         {
-            foreach (Control ctrl in this.Controls)
+            foreach (Control control in this.Controls)
             {
-                if (ctrl is SplitContainer spl1)
+                if (control is TabControl tabcontrol)
                 {
-                    foreach (Control control in spl1.Panel2.Controls)
+                    foreach (TabPage tabpage in tabcontrol.TabPages)
                     {
-                        if (control is SplitContainer spl2)
+                        foreach (Control ctrl in tabpage.Controls)
                         {
-                            foreach (Control ct in spl2.Panel1.Controls)
+                            if (ctrl is FlowLayoutPanel flp)
                             {
-                                if (ct is TabControl tbc)
+                                foreach (Control tmp in flp.Controls)
                                 {
-                                    foreach (TabPage tabPage in tbc.TabPages)
+                                    if (tmp is Panel panel)
                                     {
-                                        foreach (Control tmp in tabPage.Controls)
+                                        foreach (Control res in panel.Controls)
                                         {
-                                            if (tmp is FlowLayoutPanel flp)
+                                            if (res is PictureBox pb)
                                             {
-                                                foreach (Control x in flp.Controls)
-                                                {
-                                                    if (x is Panel panel)
-                                                    {
-                                                        foreach (Control res in panel.Controls)
-                                                        {
-                                                            if (res is PictureBox pb)
-                                                            {
-                                                                pb.Click += PictureBox_Click;
-                                                            }
-                                                        }
-                                                    }
-                                                }
+                                                pb.Click += PictureBox_Click;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-
-
-
                     }
                 }
             }
         }
-/*
-        if (ctrl is TabControl tabcontrol)
-        {
-            foreach (TabPage tbp in tabcontrol.TabPages)
-            {
-                foreach (Control innerCtrl in tbp.Controls)
-                {
-                    if (innerCtrl is FlowLayoutPanel flp)
-                    {
-                        foreach (Control tmp in flp.Controls)
-                        {
-                            if (tmp is Panel pn)
-                            {
-                                foreach (Control res in pn.Controls)
-                                {
-                                    if (res is PictureBox pb)
-                                    {
-                                        pb.Click += PictureBox_Click;
-                                        MessageBox.Show("dsdas");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (ctrl is Panel panel)
-        {
-            foreach (Control innerCtrl in panel.Controls)
-            {
-                if (innerCtrl is PictureBox picBox)
-                {
-                    picBox.Click += PictureBox_Click; // Gán sự kiện Click
-                }
-            }
-        }
-*/
         private void Service_Load(object sender, EventArgs e)
         {
             gan_su_kien_click();
@@ -202,6 +149,26 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             db.dongKN();
             MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
             dgvOrder.Rows.Clear();
+        }
+
+        private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tcLoaiMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
