@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,8 +14,8 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
     public partial class TinhTrangMay: Form
     {
         private Button selectedButton = null;
-        private Dictionary<Button, bool> machineStatus = new Dictionary<Button, bool>(); // Trạng thái máy
-        private Dictionary<Button, DateTime?> startTime = new Dictionary<Button, DateTime?>(); // Thời gian bắt đầu
+        private Dictionary<Button, bool> machineStatus = new Dictionary<Button, bool>();
+        private Dictionary<Button, DateTime?> startTime = new Dictionary<Button, DateTime?>();
         private const double pricePerHour = 8000;
         private Timer timer;
         public TinhTrangMay()
@@ -24,23 +25,22 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
             InitializeTimer();
         }
 
-        private List<Button> GetMachineButtons()
+        private List<Button> GetAllMachineButtons(TabControl tabControl)
         {
-            List<Button> machineButtons = new List<Button>();
-
-            foreach (Control ctrl in splitContainer2.Panel2.Controls)
-            {
-                if (ctrl is Button btn && btn.Name.StartsWith("btnMay"))
-                {
-                    machineButtons.Add(btn);
-                }
-            }
-
-            return machineButtons;
+            return tabControl.TabPages
+                .Cast<TabPage>()
+                .SelectMany(tp => tp.Controls.OfType<Button>())
+                .Where(btn => btn.Name.StartsWith("button"))
+                .ToList();
         }
+        private Dictionary<TabPage, double> zonePrices = new Dictionary<TabPage, double>();
         private void InitializeMachines()
         {
-            List<Button> machineButtons = GetMachineButtons();
+            zonePrices[tpTieuchuan] = 8000;
+            zonePrices[tpGaming] = 13000;
+            zonePrices[tpChuyennghiep] = 15000;
+            zonePrices[tpThidau] = 19000;
+            List<Button> machineButtons = GetAllMachineButtons(tcZone);
             foreach (Button btn in machineButtons)
             {
                 btn.BackColor = Color.Gray;
@@ -49,13 +49,16 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
                 startTime[btn] = null;
             }
 
+
             if (btnPower != null)
                 btnPower.Click += Power_Click;
         }
         private void InitializeTimer()
         {
-            timer = new Timer();
-            timer.Interval = 1000;
+            timer = new Timer
+            {
+                Interval = 1000
+            };
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -73,59 +76,78 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
             selectedButton = sender as Button;
             selectedButton.BackColor = Color.Green;
             lblMay.Text = selectedButton.Text;
+            TabPage selectedTab = selectedButton.Parent as TabPage;
+            if (selectedTab != null && zonePrices.ContainsKey(selectedTab))
+            {
+                lblZone.Text = $"Khu vực: {selectedTab.Text}";
+            }
             UpdateMachineInfo();
         }
         private void Power_Click(object sender, EventArgs e)
         {
-            if (selectedButton != null)
-            {
-                if (machineStatus[selectedButton])
-                {
-                    selectedButton.BackColor = Color.Gray;
-                    startTime[selectedButton] = null;
-                }
-                else
-                {
-                    selectedButton.BackColor = Color.FromArgb(0, 192, 192);
-                    startTime[selectedButton] = DateTime.Now;
-                }
+            if (selectedButton == null) return;
 
-                machineStatus[selectedButton] = !machineStatus[selectedButton];
+            if (machineStatus[selectedButton])
+            {
+                selectedButton.BackColor = Color.Gray;
+                startTime[selectedButton] = null;
             }
+            else
+            {
+                selectedButton.BackColor = Color.FromArgb(0, 192, 192);
+                startTime[selectedButton] = DateTime.Now;
+            }
+
+            machineStatus[selectedButton] = !machineStatus[selectedButton];
         }
         private void UpdateMachineInfo()
         {
-            if (selectedButton != null)
+            if (selectedButton == null) return;
+
+            string status = machineStatus[selectedButton] ? "Online" : "Offline";
+            string timeUsed = "00:00";
+            double cost = 0;
+            string zoneName = "Không xác định";
+
+            if (machineStatus[selectedButton] && startTime[selectedButton] != null)
             {
-                string status = machineStatus[selectedButton] ? "Online" : "Offline";
-                string timeUsed = "00:00";
-                double cost = 0;
+                TimeSpan duration = DateTime.Now - startTime[selectedButton].Value;
+                int hours = duration.Hours;
+                int minutes = duration.Minutes;
+                timeUsed = $"{hours:D2}:{minutes:D2}";
 
-                if (machineStatus[selectedButton] && startTime[selectedButton] != null)
+                double totalHours = duration.TotalMinutes / 60;
+
+
+                TabPage selectedTab = selectedButton.Parent as TabPage;
+                double zonePrice = 8000;
+
+                if (selectedTab != null)
                 {
-                    TimeSpan duration = DateTime.Now - startTime[selectedButton].Value;
-                    int hours = duration.Hours;
-                    int minutes = duration.Minutes;
-                    timeUsed = $"{hours:D2}:{minutes:D2}";
-
-
-                    double totalHours = duration.TotalMinutes / 60;
-                    cost = Math.Round(totalHours * pricePerHour, 0);
+                    if (zonePrices.ContainsKey(selectedTab))
+                    {
+                        zonePrice = zonePrices[selectedTab];
+                    }
+                    zoneName = selectedTab.Text;
                 }
 
-                lblStatus.Text = $"Trạng thái: {status}";
-                lblTimeUsed.Text = $"Thời gian sử dụng: {timeUsed}";
-                lblCost.Text = $"Tạm tính: {cost:N0}đ";
+                cost = Math.Round(totalHours * zonePrice, 0);
             }
-        }
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            splitContainer2.BorderStyle = BorderStyle.FixedSingle;
-        }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-            splitContainer1.BorderStyle = BorderStyle.FixedSingle;
+            lblStatus.Text = $"Trạng thái: {status}";
+            lblTimeUsed.Text = $"Thời gian sử dụng: {timeUsed}";
+            lblCost.Text = $"Tạm tính: {cost:N0}đ";
+            lblZone.Text = $"Khu vực: {zoneName}";
+
         }
+        //private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    splitContainer2.BorderStyle = BorderStyle.FixedSingle;
+        //}
+
+        //private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        //{
+        //    splitContainer1.BorderStyle = BorderStyle.FixedSingle;
+        //}
     }
 }
