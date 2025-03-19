@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BTL_QuanLyQuanNet.Dich_Vu
 {
-    public partial class InsertDish: Form
+    public partial class InsertDish : Form
     {
         private Service mainForm;
         public InsertDish(Service parentForm)
@@ -23,7 +23,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             cmbLoaiMon.Items.Clear();
             foreach (TabPage tab in tabControl.TabPages)
             {
-                cmbLoaiMon.Items.Add(tab.Text); 
+                cmbLoaiMon.Items.Add(tab.Text);
             }
         }
         private string ImagePath;
@@ -130,3 +130,4 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
         }
     }
 }
+

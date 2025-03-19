@@ -35,35 +35,21 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
         public void gan_su_kien_click()
         {
-            foreach (Control control in this.Controls)
+            foreach (TabPage tab in tcLoaiMon.TabPages)
             {
-                if (control is TabControl tabcontrol)
+                foreach (FlowLayoutPanel flp in tab.Controls.OfType<FlowLayoutPanel>())
                 {
-                    foreach (TabPage tabpage in tabcontrol.TabPages)
+                    foreach (Panel panel in flp.Controls.OfType<Panel>())
                     {
-                        foreach (Control ctrl in tabpage.Controls)
+                        foreach (PictureBox pb in panel.Controls.OfType<PictureBox>())
                         {
-                            if (ctrl is FlowLayoutPanel flp)
-                            {
-                                foreach (Control tmp in flp.Controls)
-                                {
-                                    if (tmp is Panel panel)
-                                    {
-                                        foreach (Control res in panel.Controls)
-                                        {
-                                            if (res is PictureBox pb)
-                                            {
-                                                pb.Click += PictureBox_Click;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            pb.Click += PictureBox_Click;
                         }
                     }
                 }
             }
         }
+
         private void Service_Load(object sender, EventArgs e)
         {
             gan_su_kien_click();
@@ -82,7 +68,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                     if (lblTenMon != null && lblGiaMon != null)
                     {
                         string tenMon = lblTenMon.Text;
-                        int giaMon = int.Parse(lblGiaMon.Text.Replace(".", "").Replace(" đ", "")); 
+                        int giaMon = int.Parse(lblGiaMon.Text.Replace(".", "").Replace(" đ", ""));
 
                         bool daCoMon = false;
                         foreach (DataGridViewRow row in dgvOrder.Rows)
@@ -91,7 +77,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                             {
                                 int soLuong = Convert.ToInt32(row.Cells["colSoluong"].Value);
                                 row.Cells["colSoluong"].Value = soLuong + 1;
-                                row.Cells["colThanhtien"].Value = (soLuong + 1) * giaMon; 
+                                row.Cells["colThanhtien"].Value = (soLuong + 1) * giaMon;
                                 daCoMon = true;
                                 break;
                             }
@@ -129,8 +115,8 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            dgvOrder.Rows.Clear(); 
-            TinhTongTien(); 
+            dgvOrder.Rows.Clear();
+            TinhTongTien();
         }
 
         private void btnXacnhan_Click(object sender, EventArgs e)
@@ -142,8 +128,10 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             db.dongKN();
             MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
             dgvOrder.Rows.Clear();
+            tongTien = 0;
+            lblTongTien.Text = tongTien.ToString("N0") + " đ";
         }
-
-
     }
 }
+
+
