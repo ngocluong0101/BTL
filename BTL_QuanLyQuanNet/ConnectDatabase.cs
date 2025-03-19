@@ -14,7 +14,7 @@ namespace BTL_QuanLyQuanNet
         SqlConnection conn = null;
         public void ketnoiSQL()
         {
-            string ConnectString = @"Data Source=LAPTOP-5E2VOLNM\SQLEXPRESS;Initial Catalog=BTL_QuanLyQuanNet;Integrated Security=True";
+            string ConnectString = @"Data Source=LINHDONTCARE\SQLEXPRESS;Initial Catalog=BTL_QuanLyQuanNet;Integrated Security=True";
             conn = new SqlConnection(ConnectString);
         }
 

@@ -23,7 +23,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             cmbLoaiMon.Items.Clear();
             foreach (TabPage tab in tabControl.TabPages)
             {
-                cmbLoaiMon.Items.Add(tab.Text); // Lấy tên TabPage
+                cmbLoaiMon.Items.Add(tab.Text); 
             }
         }
         private string ImagePath;
@@ -42,7 +42,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (mainForm == null) return;  // Đảm bảo mainForm hợp lệ
+            if (mainForm == null) return;
 
             string tenMon = txtTenmonthem.Text;
             string giaMon = txtGiamonthem.Text;
@@ -97,10 +97,8 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             panelMonAn.Controls.Add(lblTen);
             panelMonAn.Controls.Add(lblGia);
 
-            // Lấy TabControl từ Form2
             TabControl tabControl = mainForm.GetTabControl();
 
-            // Xác định TabPage để thêm món ăn vào đúng danh mục
             bool found = false;
             foreach (TabPage tab in tabControl.TabPages)
             {

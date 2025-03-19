@@ -712,7 +712,6 @@
             this.dgvOrder.RowTemplate.Height = 24;
             this.dgvOrder.Size = new System.Drawing.Size(656, 419);
             this.dgvOrder.TabIndex = 9;
-            this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             // 
             // panel2
             // 
@@ -725,7 +724,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1103, 72);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
@@ -741,7 +739,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1103, 78);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboBox2
             // 
@@ -847,7 +844,6 @@
             this.tcLoaiMon.SelectedIndex = 0;
             this.tcLoaiMon.Size = new System.Drawing.Size(442, 425);
             this.tcLoaiMon.TabIndex = 8;
-            this.tcLoaiMon.SelectedIndexChanged += new System.EventHandler(this.tcLoaiMon_SelectedIndexChanged);
             // 
             // tpBanhmi
             // 
