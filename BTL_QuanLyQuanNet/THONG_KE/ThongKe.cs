@@ -23,7 +23,7 @@ namespace BTL_QuanLyQuanNet.THONG_KE
         {
             Load_Data();
         }
-        private void Load_Data()
+        public void Load_Data()
         {
             db.moKN();
             string query = "select * from TK_ThuNhap";

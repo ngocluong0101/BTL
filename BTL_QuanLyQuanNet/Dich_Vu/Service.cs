@@ -130,6 +130,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             dgvOrder.Rows.Clear();
             tongTien = 0;
             lblTongTien.Text = tongTien.ToString("N0") + " đ";
+            
         }
     }
 }

@@ -32,12 +32,15 @@ namespace BTL_QuanLyQuanNet
                 string queryUpdate = "update KHACHHANG set Sodu = Sodu + " + txtSoTien.Text + " where Taikhoan = '" + txtTaikhoan.Text + "'";
                 string QueryLichsu = "insert into LICHSU (Taikhoan, Mota) values ('" + txtTaikhoan.Text + "', N'Đã được nạp " + txtSoTien.Text + "')";
                 string queryThongKe = "insert into TK_ThuNhap (Mota, Sotien) values (N'Nạp tiền cho khách hàng', " + txtSoTien.Text + ")";
+                string queryNaptien = "update QuanLyThoiGian set Sodu = Sodu + " + txtSoTien.Text + " where Taikhoan = '" + txtTaikhoan.Text + "'";
                 SqlCommand cmdUpdate = new SqlCommand(queryUpdate, db.GetConnection());
                 SqlCommand cmdLichsu = new SqlCommand(QueryLichsu, db.GetConnection());
                 SqlCommand cmdThongKe = new SqlCommand(queryThongKe, db.GetConnection());
+                SqlCommand cmdNaptien = new SqlCommand(queryNaptien, db.GetConnection());
                 cmdUpdate.ExecuteNonQuery();
                 cmdLichsu.ExecuteNonQuery();
                 cmdThongKe.ExecuteNonQuery();
+                cmdNaptien.ExecuteNonQuery();
                 MessageBox.Show("Đã được nạp " + txtSoTien.Text + ".", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

@@ -15,6 +15,9 @@ namespace BTL_QuanLyQuanNet
 {
     public partial class Main: Form
     {
+        ThongKe TK = new ThongKe();
+        KhachHang KH = new KhachHang();
+        QuanLyThoiGian QLTG = new QuanLyThoiGian();
         private Form formTinhTrangMay;
         private Form formKhachHang;
         private Form formService;
@@ -82,6 +85,7 @@ namespace BTL_QuanLyQuanNet
 
         private void btnKhachhang_Click(object sender, EventArgs e)
         {
+            KH.Load_data();
             OpenChildForm(ref formKhachHang, new KhachHang());
             txtXinChao.Text = btnKhachhang.Text;
         }
@@ -101,12 +105,14 @@ namespace BTL_QuanLyQuanNet
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            TK.Load_Data();
             OpenChildForm(ref formThongKe, new ThongKe());
             txtXinChao.Text = btnThongKe.Text;
         }
 
         private void btnQuanlythoigian_Click(object sender, EventArgs e)
         {
+            QLTG.Load_Data();
             OpenChildForm(ref formQuanLyThoiGian, new QuanLyThoiGian());
             txtXinChao.Text = btnQuanlythoigian.Text;
         }

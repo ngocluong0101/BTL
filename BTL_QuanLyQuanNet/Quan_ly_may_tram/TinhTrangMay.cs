@@ -140,14 +140,5 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
             lblZone.Text = $"Khu vực: {zoneName}";
 
         }
-        //private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        //{
-        //    splitContainer2.BorderStyle = BorderStyle.FixedSingle;
-        //}
-
-        //private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        //{
-        //    splitContainer1.BorderStyle = BorderStyle.FixedSingle;
-        //}
     }
 }

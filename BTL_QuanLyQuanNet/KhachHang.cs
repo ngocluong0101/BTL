@@ -26,7 +26,7 @@ namespace BTL_QuanLyQuanNet
             Load_LichSu();
         }
 
-        private void Load_data()
+        public void Load_data()
         {
             db.moKN();
             string query = "select * from KHACHHANG";
@@ -93,18 +93,6 @@ namespace BTL_QuanLyQuanNet
             formNap.ShowDialog();
             Load_data();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLichSu_Click(object sender, EventArgs e)
-        {
-            dgvLichSu.Visible = true;
-            Load_LichSu();
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             db.moKN();
@@ -115,5 +103,19 @@ namespace BTL_QuanLyQuanNet
             dgvKhachHang.DataSource = dt;
             db.dongKN();
         }
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            dgvLichSu.Visible = true;
+            Load_LichSu();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        
     }
 }
