@@ -111,7 +111,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                     tongTien += Convert.ToInt32(row.Cells["colThanhtien"].Value);
                 }
             }
-            lblTongTien.Text = tongTien.ToString("N0") + " đ";
+            lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -129,8 +129,13 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
             dgvOrder.Rows.Clear();
             tongTien = 0;
-            lblTongTien.Text = tongTien.ToString("N0") + " đ";
+            lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

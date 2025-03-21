@@ -24,7 +24,6 @@ namespace BTL_QuanLyQuanNet
         public Main()
         {
             InitializeComponent();
-            this.Size = this.ClientSize;
         }
 
         private void OpenChildForm(ref Form ChildForm,Form newForm)
