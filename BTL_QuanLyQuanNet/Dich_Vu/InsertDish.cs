@@ -115,7 +115,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                     }
                 }
             }
-
             if (!found)
             {
                 MessageBox.Show("Không tìm thấy danh mục phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

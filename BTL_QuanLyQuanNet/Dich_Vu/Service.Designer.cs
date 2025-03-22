@@ -86,6 +86,7 @@
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -95,7 +96,6 @@
             this.tcLoaiMon = new System.Windows.Forms.TabControl();
             this.tpBanhmi = new System.Windows.Forms.TabPage();
             this.tpDouong = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel9.SuspendLayout();
@@ -160,7 +160,7 @@
             this.lblGiaMonMixao.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonMixao.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonMixao.Name = "lblGiaMonMixao";
-            this.lblGiaMonMixao.Size = new System.Drawing.Size(72, 25);
+            this.lblGiaMonMixao.Size = new System.Drawing.Size(59, 20);
             this.lblGiaMonMixao.TabIndex = 1;
             this.lblGiaMonMixao.Text = "35000";
             // 
@@ -170,7 +170,7 @@
             this.lblTenMonMixao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonMixao.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonMixao.Name = "lblTenMonMixao";
-            this.lblTenMonMixao.Size = new System.Drawing.Size(76, 25);
+            this.lblTenMonMixao.Size = new System.Drawing.Size(60, 20);
             this.lblTenMonMixao.TabIndex = 1;
             this.lblTenMonMixao.Text = "Mì xào";
             // 
@@ -202,7 +202,7 @@
             this.lblGiaMonMitom.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonMitom.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonMitom.Name = "lblGiaMonMitom";
-            this.lblGiaMonMitom.Size = new System.Drawing.Size(72, 25);
+            this.lblGiaMonMitom.Size = new System.Drawing.Size(59, 20);
             this.lblGiaMonMitom.TabIndex = 1;
             this.lblGiaMonMitom.Text = "30000";
             // 
@@ -212,7 +212,7 @@
             this.lblTenMonMitom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonMitom.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonMitom.Name = "lblTenMonMitom";
-            this.lblTenMonMitom.Size = new System.Drawing.Size(76, 25);
+            this.lblTenMonMitom.Size = new System.Drawing.Size(62, 20);
             this.lblTenMonMitom.TabIndex = 1;
             this.lblTenMonMitom.Text = "Mì tôm";
             // 
@@ -233,7 +233,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(428, 390);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(428, 393);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // panel10
@@ -254,7 +254,7 @@
             this.lblGiaMonbanhmi1.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonbanhmi1.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonbanhmi1.Name = "lblGiaMonbanhmi1";
-            this.lblGiaMonbanhmi1.Size = new System.Drawing.Size(72, 25);
+            this.lblGiaMonbanhmi1.Size = new System.Drawing.Size(59, 20);
             this.lblGiaMonbanhmi1.TabIndex = 1;
             this.lblGiaMonbanhmi1.Text = "25000";
             // 
@@ -264,7 +264,7 @@
             this.lblTenMonbanhmi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonbanhmi1.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonbanhmi1.Name = "lblTenMonbanhmi1";
-            this.lblTenMonbanhmi1.Size = new System.Drawing.Size(184, 25);
+            this.lblTenMonbanhmi1.Size = new System.Drawing.Size(153, 20);
             this.lblTenMonbanhmi1.TabIndex = 1;
             this.lblTenMonbanhmi1.Text = "Bánh mì thập cẩm";
             // 
@@ -285,7 +285,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(428, 390);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(428, 393);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // panel11
@@ -306,7 +306,7 @@
             this.lblGiaMonSting.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonSting.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonSting.Name = "lblGiaMonSting";
-            this.lblGiaMonSting.Size = new System.Drawing.Size(72, 25);
+            this.lblGiaMonSting.Size = new System.Drawing.Size(59, 20);
             this.lblGiaMonSting.TabIndex = 1;
             this.lblGiaMonSting.Text = "15000";
             // 
@@ -316,7 +316,7 @@
             this.lblTenMonSting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonSting.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonSting.Name = "lblTenMonSting";
-            this.lblTenMonSting.Size = new System.Drawing.Size(62, 25);
+            this.lblTenMonSting.Size = new System.Drawing.Size(51, 20);
             this.lblTenMonSting.TabIndex = 1;
             this.lblTenMonSting.Text = "Sting";
             // 
@@ -348,7 +348,7 @@
             this.lblGiaMonredbull.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonredbull.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonredbull.Name = "lblGiaMonredbull";
-            this.lblGiaMonredbull.Size = new System.Drawing.Size(72, 25);
+            this.lblGiaMonredbull.Size = new System.Drawing.Size(59, 20);
             this.lblGiaMonredbull.TabIndex = 1;
             this.lblGiaMonredbull.Text = "20000";
             // 
@@ -358,7 +358,7 @@
             this.lblTenMonredbull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonredbull.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonredbull.Name = "lblTenMonredbull";
-            this.lblTenMonredbull.Size = new System.Drawing.Size(84, 25);
+            this.lblTenMonredbull.Size = new System.Drawing.Size(70, 20);
             this.lblTenMonredbull.TabIndex = 1;
             this.lblTenMonredbull.Text = "Redbull";
             // 
@@ -375,10 +375,10 @@
             // tpCom
             // 
             this.tpCom.Controls.Add(this.flpCom);
-            this.tpCom.Location = new System.Drawing.Point(4, 25);
+            this.tpCom.Location = new System.Drawing.Point(4, 22);
             this.tpCom.Name = "tpCom";
             this.tpCom.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCom.Size = new System.Drawing.Size(434, 396);
+            this.tpCom.Size = new System.Drawing.Size(434, 399);
             this.tpCom.TabIndex = 1;
             this.tpCom.Text = "Cơm";
             this.tpCom.UseVisualStyleBackColor = true;
@@ -394,7 +394,7 @@
             this.flpCom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpCom.Location = new System.Drawing.Point(3, 3);
             this.flpCom.Name = "flpCom";
-            this.flpCom.Size = new System.Drawing.Size(428, 390);
+            this.flpCom.Size = new System.Drawing.Size(428, 393);
             this.flpCom.TabIndex = 0;
             // 
             // panel3
@@ -415,7 +415,7 @@
             this.lblTenMonComTrang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonComTrang.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonComTrang.Name = "lblTenMonComTrang";
-            this.lblTenMonComTrang.Size = new System.Drawing.Size(100, 23);
+            this.lblTenMonComTrang.Size = new System.Drawing.Size(80, 19);
             this.lblTenMonComTrang.TabIndex = 1;
             this.lblTenMonComTrang.Text = "Cơm trắng";
             // 
@@ -426,7 +426,7 @@
             this.lblGiaMonComTrang.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonComTrang.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonComTrang.Name = "lblGiaMonComTrang";
-            this.lblGiaMonComTrang.Size = new System.Drawing.Size(60, 23);
+            this.lblGiaMonComTrang.Size = new System.Drawing.Size(49, 19);
             this.lblGiaMonComTrang.TabIndex = 1;
             this.lblGiaMonComTrang.Text = "15000";
             // 
@@ -458,7 +458,7 @@
             this.lblTenMonComRang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonComRang.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonComRang.Name = "lblTenMonComRang";
-            this.lblTenMonComRang.Size = new System.Drawing.Size(93, 23);
+            this.lblTenMonComRang.Size = new System.Drawing.Size(75, 19);
             this.lblTenMonComRang.TabIndex = 1;
             this.lblTenMonComRang.Text = "Cơm rang";
             // 
@@ -469,7 +469,7 @@
             this.lblGiaMonComRang.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonComRang.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonComRang.Name = "lblGiaMonComRang";
-            this.lblGiaMonComRang.Size = new System.Drawing.Size(60, 23);
+            this.lblGiaMonComRang.Size = new System.Drawing.Size(49, 19);
             this.lblGiaMonComRang.TabIndex = 1;
             this.lblGiaMonComRang.Text = "25000";
             // 
@@ -501,7 +501,7 @@
             this.lblTenMonComGa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonComGa.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonComGa.Name = "lblTenMonComGa";
-            this.lblTenMonComGa.Size = new System.Drawing.Size(75, 23);
+            this.lblTenMonComGa.Size = new System.Drawing.Size(61, 19);
             this.lblTenMonComGa.TabIndex = 1;
             this.lblTenMonComGa.Text = "Cơm gà";
             // 
@@ -512,7 +512,7 @@
             this.lblGiaMonComGa.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonComGa.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonComGa.Name = "lblGiaMonComGa";
-            this.lblGiaMonComGa.Size = new System.Drawing.Size(60, 23);
+            this.lblGiaMonComGa.Size = new System.Drawing.Size(49, 19);
             this.lblGiaMonComGa.TabIndex = 1;
             this.lblGiaMonComGa.Text = "35000";
             // 
@@ -545,7 +545,7 @@
             this.lblGiaMonComTam.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonComTam.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonComTam.Name = "lblGiaMonComTam";
-            this.lblGiaMonComTam.Size = new System.Drawing.Size(60, 23);
+            this.lblGiaMonComTam.Size = new System.Drawing.Size(49, 19);
             this.lblGiaMonComTam.TabIndex = 1;
             this.lblGiaMonComTam.Text = "50000";
             // 
@@ -555,7 +555,7 @@
             this.lblTenMonComTam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonComTam.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonComTam.Name = "lblTenMonComTam";
-            this.lblTenMonComTam.Size = new System.Drawing.Size(87, 23);
+            this.lblTenMonComTam.Size = new System.Drawing.Size(70, 19);
             this.lblTenMonComTam.TabIndex = 1;
             this.lblTenMonComTam.Text = "Cơm tấm";
             // 
@@ -587,7 +587,7 @@
             this.lblTenMonComChay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonComChay.Location = new System.Drawing.Point(10, 170);
             this.lblTenMonComChay.Name = "lblTenMonComChay";
-            this.lblTenMonComChay.Size = new System.Drawing.Size(94, 23);
+            this.lblTenMonComChay.Size = new System.Drawing.Size(76, 19);
             this.lblTenMonComChay.TabIndex = 1;
             this.lblTenMonComChay.Text = "Cơm cháy";
             // 
@@ -598,7 +598,7 @@
             this.lblGiaMonComChay.ForeColor = System.Drawing.Color.Red;
             this.lblGiaMonComChay.Location = new System.Drawing.Point(10, 200);
             this.lblGiaMonComChay.Name = "lblGiaMonComChay";
-            this.lblGiaMonComChay.Size = new System.Drawing.Size(60, 23);
+            this.lblGiaMonComChay.Size = new System.Drawing.Size(49, 19);
             this.lblGiaMonComChay.TabIndex = 1;
             this.lblGiaMonComChay.Text = "30000";
             // 
@@ -672,7 +672,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(434, 396);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(434, 399);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // lblTongTien
@@ -688,9 +688,9 @@
             // tpMi
             // 
             this.tpMi.Controls.Add(this.flowLayoutPanel1);
-            this.tpMi.Location = new System.Drawing.Point(4, 25);
+            this.tpMi.Location = new System.Drawing.Point(4, 22);
             this.tpMi.Name = "tpMi";
-            this.tpMi.Size = new System.Drawing.Size(434, 396);
+            this.tpMi.Size = new System.Drawing.Size(434, 399);
             this.tpMi.TabIndex = 4;
             this.tpMi.Text = "Mì";
             this.tpMi.UseVisualStyleBackColor = true;
@@ -729,7 +729,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.comboBox1);
@@ -741,6 +741,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1103, 78);
             this.panel1.TabIndex = 6;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(245, 17);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(71, 42);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Xóa món";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
             // 
@@ -774,7 +784,7 @@
             this.comboBox2.Location = new System.Drawing.Point(988, 24);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 24);
+            this.comboBox2.Size = new System.Drawing.Size(92, 21);
             this.comboBox2.TabIndex = 7;
             // 
             // label3
@@ -784,7 +794,7 @@
             this.label3.Location = new System.Drawing.Point(927, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 23);
+            this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "Máy";
             // 
@@ -799,7 +809,7 @@
             this.comboBox1.Location = new System.Drawing.Point(804, 24);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(89, 24);
+            this.comboBox1.Size = new System.Drawing.Size(89, 21);
             this.comboBox1.TabIndex = 5;
             // 
             // label2
@@ -809,7 +819,7 @@
             this.label2.Location = new System.Drawing.Point(748, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 23);
+            this.label2.Size = new System.Drawing.Size(42, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Zone";
             // 
@@ -850,10 +860,10 @@
             // tpBanhmi
             // 
             this.tpBanhmi.Controls.Add(this.flowLayoutPanel2);
-            this.tpBanhmi.Location = new System.Drawing.Point(4, 25);
+            this.tpBanhmi.Location = new System.Drawing.Point(4, 22);
             this.tpBanhmi.Name = "tpBanhmi";
             this.tpBanhmi.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBanhmi.Size = new System.Drawing.Size(434, 396);
+            this.tpBanhmi.Size = new System.Drawing.Size(434, 399);
             this.tpBanhmi.TabIndex = 2;
             this.tpBanhmi.Text = "Bánh mì";
             this.tpBanhmi.UseVisualStyleBackColor = true;
@@ -861,23 +871,13 @@
             // tpDouong
             // 
             this.tpDouong.Controls.Add(this.flowLayoutPanel3);
-            this.tpDouong.Location = new System.Drawing.Point(4, 25);
+            this.tpDouong.Location = new System.Drawing.Point(4, 22);
             this.tpDouong.Name = "tpDouong";
             this.tpDouong.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDouong.Size = new System.Drawing.Size(434, 396);
+            this.tpDouong.Size = new System.Drawing.Size(434, 399);
             this.tpDouong.TabIndex = 3;
             this.tpDouong.Text = "Đồ uống";
             this.tpDouong.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(373, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Service
             // 
@@ -1006,6 +1006,6 @@
         private System.Windows.Forms.TabControl tcLoaiMon;
         private System.Windows.Forms.TabPage tpBanhmi;
         private System.Windows.Forms.TabPage tpDouong;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

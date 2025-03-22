@@ -40,12 +40,6 @@ namespace BTL_QuanLyQuanNet
             }
         }
 
-
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void chkHideShowPass_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkHideShowPass.Checked) txtPassword.UseSystemPasswordChar = false;

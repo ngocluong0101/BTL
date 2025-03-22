@@ -62,6 +62,20 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                 Panel panel = pic.Parent as Panel;
                 if (panel != null)
                 {
+                    if (isDeleteMode) 
+                    {
+                        DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này không?",
+                                               "Xác nhận xóa",
+                                               MessageBoxButtons.OKCancel,
+                                               MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.OK)
+                        {
+                            panel.Parent.Controls.Remove(panel);
+                        }
+                        return;
+                    }
+
                     Label lblTenMon = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("lblTenMon"));
                     Label lblGiaMon = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("lblGiaMon"));
 
@@ -86,7 +100,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                         if (!daCoMon)
                         {
                             int stt = dgvOrder.Rows.Count + 1;
-
                             dgvOrder.Rows.Add(stt, tenMon, 1, giaMon, giaMon);
                         }
 
@@ -100,6 +113,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                 }
             }
         }
+
         int tongTien = 0;
         private void TinhTongTien()
         {
@@ -132,9 +146,19 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
             
         }
+        private bool isDeleteMode = false;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            isDeleteMode = !isDeleteMode;
+            if (isDeleteMode)
+            {
+                btnDelete.Text = "Thoát xóa";
+            }
+            else
+            {
+                btnDelete.Text = "Xóa món";
+            }
 
         }
     }
