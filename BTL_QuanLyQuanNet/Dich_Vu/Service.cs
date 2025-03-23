@@ -147,21 +147,9 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
             
         }
+
         private bool isDeleteMode = false;
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            isDeleteMode = !isDeleteMode;
-            if (isDeleteMode)
-            {
-                btnDelete.Text = "Thoát xóa";
-            }
-            else
-            {
-                btnDelete.Text = "Xóa món";
-            }
-
-        }
+   
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
@@ -211,6 +199,19 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             // Tổng tiền
             startY += lineHeight;
             g.DrawString($"Tổng tiền: {tongTien:N0} đ", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            isDeleteMode = !isDeleteMode;
+            if (isDeleteMode)
+            {
+                btnDelete.Text = "Thoát xóa";
+            }
+            else
+            {
+                btnDelete.Text = "Xóa món";
+            }
         }
     }
 }
