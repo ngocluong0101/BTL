@@ -20,7 +20,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
         }
         public void SetTabPages(TabControl tabControl)
         {
-            cmbLoaiMon.Items.Clear();
             foreach (TabPage tab in tabControl.TabPages)
             {
                 cmbLoaiMon.Items.Add(tab.Text);
@@ -31,7 +30,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ImagePath = openFileDialog.FileName;
@@ -47,19 +46,13 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             string tenMon = txtTenmonthem.Text;
             string giaMon = txtGiamonthem.Text;
             Image hinhAnh = picThemMon.Image;
-            string loaiMon = cmbLoaiMon.SelectedItem?.ToString();
+            string loaiMon = cmbLoaiMon.SelectedItem.ToString();
 
             if (string.IsNullOrEmpty(tenMon) || string.IsNullOrEmpty(giaMon) || hinhAnh == null || string.IsNullOrEmpty(loaiMon))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
-            if (hinhAnh == null || string.IsNullOrEmpty(loaiMon))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
-
             Panel panelMonAn = new Panel
             {
                 Size = new Size(200, 250),
@@ -98,8 +91,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             panelMonAn.Controls.Add(lblGia);
 
             TabControl tabControl = mainForm.GetTabControl();
-
-            bool found = false;
             foreach (TabPage tab in tabControl.TabPages)
             {
                 if (tab.Text == loaiMon)
@@ -109,23 +100,13 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                         if (ctrl is FlowLayoutPanel flp)
                         {
                             flp.Controls.Add(panelMonAn);
-                            found = true;
-                            break;
+                            MessageBox.Show("Món ăn đã được thêm vào danh mục " + loaiMon, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                            return; 
                         }
                     }
                 }
             }
-            if (!found)
-            {
-                MessageBox.Show("Không tìm thấy danh mục phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Món ăn đã được thêm vào danh mục " + loaiMon, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            this.Close();
-
         }
     }
 }

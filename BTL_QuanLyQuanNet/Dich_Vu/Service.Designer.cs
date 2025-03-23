@@ -705,14 +705,14 @@
             this.colSoluong,
             this.colDongia,
             this.colThanhtien});
-            this.dgvOrder.Location = new System.Drawing.Point(448, 79);
+            this.dgvOrder.Location = new System.Drawing.Point(439, 77);
             this.dgvOrder.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersVisible = false;
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(656, 419);
+            this.dgvOrder.Size = new System.Drawing.Size(665, 416);
             this.dgvOrder.TabIndex = 9;
             // 
             // panel2

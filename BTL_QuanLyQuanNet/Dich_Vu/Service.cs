@@ -24,16 +24,14 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
         {
             return tcLoaiMon;
         }
-
         private void btnAddDish_Click(object sender, EventArgs e)
         {
-            InsertDish form3 = new InsertDish(this);
+            InsertDish form3 = new InsertDish(this); 
             form3.SetTabPages(tcLoaiMon);
             form3.ShowDialog();
-            this.Refresh();
+            this.Refresh(); 
 
         }
-
         public void gan_su_kien_click()
         {
             foreach (TabPage tab in tcLoaiMon.TabPages)
@@ -50,10 +48,22 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                 }
             }
         }
-
-        private void Service_Load(object sender, EventArgs e)
+        private void Service_Load(object sender, EventArgs e) 
         {
             gan_su_kien_click();
+        }
+        private bool isDeleteMode = false;
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            isDeleteMode = !isDeleteMode;
+            if (isDeleteMode)
+            {
+                btnDelete.Text = "Thoát xóa";
+            }
+            else
+            {
+                btnDelete.Text = "Xóa món";
+            }
         }
         public void PictureBox_Click(object sender, EventArgs e)
         {
@@ -76,14 +86,13 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                         }
                         return;
                     }
-
                     Label lblTenMon = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("lblTenMon"));
                     Label lblGiaMon = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Name.Contains("lblGiaMon"));
 
                     if (lblTenMon != null && lblGiaMon != null)
                     {
                         string tenMon = lblTenMon.Text;
-                        int giaMon = int.Parse(lblGiaMon.Text.Replace(".", "").Replace(" đ", ""));
+                        int giaMon = int.Parse(lblGiaMon.Text);
 
                         bool daCoMon = false;
                         foreach (DataGridViewRow row in dgvOrder.Rows)
@@ -97,15 +106,12 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                                 break;
                             }
                         }
-
                         if (!daCoMon)
                         {
                             int stt = dgvOrder.Rows.Count + 1;
                             dgvOrder.Rows.Add(stt, tenMon, 1, giaMon, giaMon);
                         }
-
                         TinhTongTien();
-
                         for (int i = 0; i < dgvOrder.Rows.Count; i++)
                         {
                             dgvOrder.Rows[i].Cells["colStt"].Value = i + 1;
@@ -114,7 +120,6 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
                 }
             }
         }
-
         int tongTien = 0;
         private void TinhTongTien()
         {
@@ -145,23 +150,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             dgvOrder.Rows.Clear();
             tongTien = 0;
             lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
-            
         }
-        private bool isDeleteMode = false;
-        private void btnDelete_Click_1(object sender, EventArgs e)
-        {
-            isDeleteMode = !isDeleteMode;
-            if (isDeleteMode)
-            {
-                btnDelete.Text = "Thoát xóa";
-            }
-            else
-            {
-                btnDelete.Text = "Xóa món";
-            }
-        }
-
-     
     }
 }
 
