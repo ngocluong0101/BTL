@@ -85,7 +85,6 @@
             this.tpMi = new System.Windows.Forms.TabPage();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHoaDon = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -709,6 +708,7 @@
             this.dgvOrder.Location = new System.Drawing.Point(448, 79);
             this.dgvOrder.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersVisible = false;
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 24;
@@ -718,7 +718,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.panel2.Controls.Add(this.btnHoaDon);
             this.panel2.Controls.Add(this.lblTongTien);
             this.panel2.Controls.Add(this.btnXacnhan);
             this.panel2.Controls.Add(this.btnReset);
@@ -727,16 +726,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1103, 72);
             this.panel2.TabIndex = 7;
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.Location = new System.Drawing.Point(973, 8);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(91, 55);
-            this.btnHoaDon.TabIndex = 4;
-            this.btnHoaDon.Text = "HÓA ĐƠN";
-            this.btnHoaDon.UseVisualStyleBackColor = true;
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // panel1
             // 
@@ -1019,6 +1008,5 @@
         private System.Windows.Forms.TabPage tpBanhmi;
         private System.Windows.Forms.TabPage tpDouong;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnHoaDon;
     }
 }

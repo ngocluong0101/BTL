@@ -161,56 +161,7 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
             }
         }
 
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += new PrintPageEventHandler(PrintHoaDon);
-
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog
-            {
-                Document = printDocument
-            };
-
-            if (previewDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
-        }
-        private void PrintHoaDon(object sender, PrintPageEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Font fontTitle = new Font("Arial", 16, FontStyle.Bold);
-            Font fontNormal = new Font("Arial", 12);
-            int startX = 50, startY = 50, lineHeight = 25;
-
-            // Tiêu đề hóa đơn
-            g.DrawString("HÓA ĐƠN DỊCH VỤ", fontTitle, Brushes.Black, startX, startY);
-            startY += lineHeight * 2;
-
-            // In danh sách món ăn từ DataGridView
-            g.DrawString("Tên món", fontNormal, Brushes.Black, startX, startY);
-            g.DrawString("Số lượng", fontNormal, Brushes.Black, startX + 200, startY);
-            g.DrawString("Đơn giá", fontNormal, Brushes.Black, startX + 350, startY);
-            g.DrawString("Thành tiền", fontNormal, Brushes.Black, startX + 500, startY);
-            startY += lineHeight;
-
-            foreach (DataGridViewRow row in dgvOrder.Rows)
-            {
-                if (row.Cells["colTenmon"].Value != null)
-                {
-                    g.DrawString(row.Cells["colTenmon"].Value.ToString(), fontNormal, Brushes.Black, startX, startY);
-                    g.DrawString(row.Cells["colSoluong"].Value.ToString(), fontNormal, Brushes.Black, startX + 200, startY);
-                    g.DrawString(row.Cells["colDongia"].Value.ToString(), fontNormal, Brushes.Black, startX + 350, startY);
-                    g.DrawString(row.Cells["colThanhtien"].Value.ToString(), fontNormal, Brushes.Black, startX + 500, startY);
-                    startY += lineHeight;
-                }
-            }
-
-            // Tổng tiền
-            startY += lineHeight;
-            g.DrawString($"Tổng tiền: {tongTien:N0} đ", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
-        }
-
+     
     }
 }
 
