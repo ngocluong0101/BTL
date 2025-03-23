@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHoaDon = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuNhap)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -194,11 +195,22 @@
             this.btnHoaDon.UseVisualStyleBackColor = false;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Image = global::BTL_QuanLyQuanNet.Properties.Resources.load;
+            this.btnReset.Location = new System.Drawing.Point(326, 477);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(68, 52);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // ThongKe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 563);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -231,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHoaDon;
+        private System.Windows.Forms.Button btnReset;
     }
 }

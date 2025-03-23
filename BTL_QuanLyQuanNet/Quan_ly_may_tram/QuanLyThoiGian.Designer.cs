@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,6 +59,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.splitContainer1.Panel1.Controls.Add(this.btnReset);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
@@ -213,6 +215,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Máy 01";
             // 
+            // btnReset
+            // 
+            this.btnReset.Image = global::BTL_QuanLyQuanNet.Properties.Resources.load;
+            this.btnReset.Location = new System.Drawing.Point(779, 87);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(61, 48);
+            this.btnReset.TabIndex = 4;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // QuanLyThoiGian
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -249,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnReset;
     }
 }

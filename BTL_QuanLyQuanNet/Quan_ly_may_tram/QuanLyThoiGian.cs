@@ -21,7 +21,9 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
         public void Load_Data()
         {
             db.moKN();
-            string query = "select * from QuanLyThoiGian";
+            string query = "select QLTG.Somay, QLTG.Taikhoan, QLTG.Loai, QLTG.Thoigianconlai, KH.Sodu as Sodu " 
+                            + " from QuanLyThoiGian QLTG, KHACHHANG KH "
+                            + " where QLTG.Taikhoan = KH.Taikhoan";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -55,6 +57,11 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
         {
             NapTien formNap = new NapTien();
             formNap.ShowDialog();
+            Load_Data();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
             Load_Data();
         }
     }

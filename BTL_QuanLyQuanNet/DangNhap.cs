@@ -28,6 +28,7 @@ namespace BTL_QuanLyQuanNet
             if (inputusername == username && inputpassword == password)
             {
                 DialogResult res = MessageBox.Show("Dang nhap thanh cong!", "Thong bao");
+                this.Hide();
                 Main formMain = new Main();
                 formMain.ShowDialog();
                 this.Close();

@@ -27,7 +27,7 @@ namespace BTL_QuanLyQuanNet.THONG_KE
         public void Load_Data()
         {
             db.moKN();
-            string query = "select * from TK_ThuNhap";
+            string query = "select Thoigian, Mota, Sotien from TK_ThuNhap";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -39,7 +39,7 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             string TuNgay = dtpTuNgay.Value.ToString("yyyy/MM/dd");
             string DenNgay = dtpDenNgay.Value.ToString("yyyy/MM/dd");
             db.moKN();
-            string query = $"select * from TK_ThuNhap where Thoigian between '{TuNgay}' and '{DenNgay}'";
+            string query = $"select Thoigian, Mota, Sotien from TK_ThuNhap where Thoigian between '{TuNgay}' and '{DenNgay}'";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -127,6 +127,11 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             // In tổng thu
             startY += lineHeight;
             g.DrawString($"Tổng thu: {txtTongThu.Text}", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_Data();
         }
     }
 }

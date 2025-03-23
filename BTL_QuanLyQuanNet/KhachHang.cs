@@ -29,7 +29,7 @@ namespace BTL_QuanLyQuanNet
         public void Load_data()
         {
             db.moKN();
-            string query = "select * from KHACHHANG";
+            string query = "select Taikhoan, Matkhau, Sodu from KHACHHANG";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -39,7 +39,7 @@ namespace BTL_QuanLyQuanNet
         private void Load_LichSu()
         {
             db.moKN();
-            string query = "select * from LICHSU";
+            string query = "select Thoigian, Taikhoan, Mota from LICHSU";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -96,7 +96,7 @@ namespace BTL_QuanLyQuanNet
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             db.moKN();
-            string query = "select * from KHACHHANG where Taikhoan = '" + txtTimkiem.Text + "'";
+            string query = "select Taikhoan, Matkhau, Sodu from KHACHHANG where Taikhoan = '" + txtTimkiem.Text + "'";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -114,8 +114,10 @@ namespace BTL_QuanLyQuanNet
 
         }
 
-        
-
-        
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_data();
+            Load_LichSu();
+        }
     }
 }

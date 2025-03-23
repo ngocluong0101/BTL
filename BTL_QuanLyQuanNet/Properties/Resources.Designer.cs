@@ -93,6 +93,16 @@ namespace BTL_QuanLyQuanNet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap load {
+            get {
+                object obj = ResourceManager.GetObject("load", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log_out {
             get {
                 object obj = ResourceManager.GetObject("log-out", resourceCulture);
@@ -106,6 +116,16 @@ namespace BTL_QuanLyQuanNet.Properties {
         internal static System.Drawing.Bitmap logo_game {
             get {
                 object obj = ResourceManager.GetObject("logo game", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reload_arrow {
+            get {
+                object obj = ResourceManager.GetObject("reload-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
