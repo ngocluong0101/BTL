@@ -128,6 +128,5 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             g.DrawString($"Tổng thu: {txtTongThu.Text}", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
         }
 
-        
     }
 }

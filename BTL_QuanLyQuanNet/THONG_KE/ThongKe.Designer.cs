@@ -63,13 +63,13 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgvThuNhap.Location = new System.Drawing.Point(40, 59);
+            this.dgvThuNhap.Location = new System.Drawing.Point(58, 61);
             this.dgvThuNhap.Name = "dgvThuNhap";
             this.dgvThuNhap.ReadOnly = true;
             this.dgvThuNhap.RowHeadersVisible = false;
             this.dgvThuNhap.RowHeadersWidth = 51;
             this.dgvThuNhap.RowTemplate.Height = 24;
-            this.dgvThuNhap.Size = new System.Drawing.Size(638, 412);
+            this.dgvThuNhap.Size = new System.Drawing.Size(610, 406);
             this.dgvThuNhap.TabIndex = 1;
             // 
             // Column1
@@ -108,9 +108,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(709, 155);
+            this.panel1.Location = new System.Drawing.Point(720, 145);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 180);
+            this.panel1.Size = new System.Drawing.Size(335, 168);
             this.panel1.TabIndex = 4;
             // 
             // txtTongThu
@@ -187,7 +187,7 @@
             this.btnHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Location = new System.Drawing.Point(780, 419);
+            this.btnHoaDon.Location = new System.Drawing.Point(790, 415);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 52);
             this.btnHoaDon.TabIndex = 6;
