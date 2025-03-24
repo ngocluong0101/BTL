@@ -83,6 +83,16 @@ namespace BTL_QuanLyQuanNet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gamingLLA {
+            get {
+                object obj = ResourceManager.GetObject("gamingLLA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lilomariokole___Student__Writer___DeviantArt {
             get {
                 object obj = ResourceManager.GetObject("lilomariokole - Student, Writer _ DeviantArt", resourceCulture);

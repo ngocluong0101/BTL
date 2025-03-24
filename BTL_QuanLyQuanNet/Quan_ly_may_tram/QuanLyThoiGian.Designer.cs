@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnReset = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Somay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,9 +73,20 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1103, 563);
             this.splitContainer1.SplitterDistance = 861;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Image = global::BTL_QuanLyQuanNet.Properties.Resources.load;
+            this.btnReset.Location = new System.Drawing.Point(779, 87);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(61, 48);
+            this.btnReset.TabIndex = 4;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dataGridView1
             // 
@@ -97,6 +108,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(864, 422);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Somay
             // 
@@ -154,7 +166,7 @@
             this.btnTatMay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnTatMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTatMay.ForeColor = System.Drawing.Color.White;
-            this.btnTatMay.Location = new System.Drawing.Point(20, 331);
+            this.btnTatMay.Location = new System.Drawing.Point(27, 505);
             this.btnTatMay.Name = "btnTatMay";
             this.btnTatMay.Size = new System.Drawing.Size(177, 46);
             this.btnTatMay.TabIndex = 5;
@@ -167,9 +179,9 @@
             this.btnNapTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnNapTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNapTien.ForeColor = System.Drawing.Color.White;
-            this.btnNapTien.Location = new System.Drawing.Point(17, 274);
+            this.btnNapTien.Location = new System.Drawing.Point(27, 432);
             this.btnNapTien.Name = "btnNapTien";
-            this.btnNapTien.Size = new System.Drawing.Size(177, 39);
+            this.btnNapTien.Size = new System.Drawing.Size(177, 46);
             this.btnNapTien.TabIndex = 4;
             this.btnNapTien.Text = "Nạp tiền";
             this.btnNapTien.UseVisualStyleBackColor = false;
@@ -181,9 +193,8 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 170);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 18);
+            this.label5.Size = new System.Drawing.Size(0, 18);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Thời gian còn lại : 01:13";
             // 
             // label4
             // 
@@ -191,9 +202,8 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 18);
+            this.label4.Size = new System.Drawing.Size(0, 18);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Loại : Tiêu chuẩn";
             // 
             // label3
             // 
@@ -201,9 +211,8 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 18);
+            this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Người dùng : khanhlinh123";
             // 
             // label2
             // 
@@ -211,19 +220,8 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 24);
+            this.label2.Size = new System.Drawing.Size(0, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Máy 01";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Image = global::BTL_QuanLyQuanNet.Properties.Resources.load;
-            this.btnReset.Location = new System.Drawing.Point(779, 87);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(61, 48);
-            this.btnReset.TabIndex = 4;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QuanLyThoiGian
             // 

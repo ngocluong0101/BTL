@@ -91,31 +91,31 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             Font fontNormal = new Font("Arial", 12);
             int startX = 50, startY = 50, lineHeight = 25;
 
-            // In tiêu đề hóa đơn
+            
             g.DrawString("HÓA ĐƠN THỐNG KÊ THU NHẬP", fontTitle, Brushes.Black, startX, startY);
             startY += lineHeight * 2;
 
-            // In khoảng thời gian
+            
             g.DrawString($"Từ ngày: {dtpTuNgay.Value:dd/MM/yyyy}  Đến ngày: {dtpDenNgay.Value:dd/MM/yyyy}", fontNormal, Brushes.Black, startX, startY);
             startY += lineHeight * 2;
 
-            // In tiêu đề bảng (Căn chỉnh cột hợp lý hơn)
+            
             g.DrawString("Thời gian", fontNormal, Brushes.Black, startX, startY);
             g.DrawString("Mô tả", fontNormal, Brushes.Black, startX + 200, startY);
             g.DrawString("Số tiền", fontNormal, Brushes.Black, startX + 450, startY);
             startY += lineHeight;
 
-            // In dữ liệu từ DataGridView
+            
             foreach (DataGridViewRow row in dgvThuNhap.Rows)
             {
                 if (row.Cells[0].Value != null && row.Cells[1].Value != null && row.Cells[2].Value != null)
                 {
-                    // Lấy ngày thay vì ngày giờ
+                    
                     string ngay = Convert.ToDateTime(row.Cells[0].Value).ToString("dd/MM/yyyy");
                     string moTa = row.Cells[1].Value.ToString();
                     string soTien = Convert.ToInt32(row.Cells[2].Value).ToString("N0") + " đ"; // Định dạng số tiền
 
-                    // In từng cột với khoảng cách hợp lý
+                    
                     g.DrawString(ngay, fontNormal, Brushes.Black, startX, startY);
                     g.DrawString(moTa, fontNormal, Brushes.Black, startX + 200, startY);
                     g.DrawString(soTien, fontNormal, Brushes.Black, startX + 450, startY);
@@ -124,14 +124,10 @@ namespace BTL_QuanLyQuanNet.THONG_KE
                 }
             }
 
-            // In tổng thu
             startY += lineHeight;
             g.DrawString($"Tổng thu: {txtTongThu.Text}", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            Load_Data();
-        }
+        
     }
 }

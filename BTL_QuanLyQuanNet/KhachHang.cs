@@ -114,10 +114,6 @@ namespace BTL_QuanLyQuanNet
 
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            Load_data();
-            Load_LichSu();
-        }
+        
     }
 }

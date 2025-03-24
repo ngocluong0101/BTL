@@ -47,7 +47,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLichSu = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.SuspendLayout();
@@ -266,23 +265,11 @@
             this.btnLichSu.UseVisualStyleBackColor = false;
             this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.SystemColors.Window;
-            this.btnReset.Image = global::BTL_QuanLyQuanNet.Properties.Resources.load;
-            this.btnReset.Location = new System.Drawing.Point(324, 476);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(63, 53);
-            this.btnReset.TabIndex = 7;
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // KhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 563);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnLichSu);
             this.Controls.Add(this.dgvLichSu);
             this.Controls.Add(this.panel1);
@@ -326,6 +313,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button btnReset;
     }
 }
