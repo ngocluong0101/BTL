@@ -30,8 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTimkiem = new System.Windows.Forms.TextBox();
+            this.lblTimKiem = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,23 +51,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTimKiem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TÌM KIẾM :";
+            this.lblTimKiem.AutoSize = true;
+            this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimKiem.Location = new System.Drawing.Point(146, 57);
+            this.lblTimKiem.Name = "lblTimKiem";
+            this.lblTimKiem.Size = new System.Drawing.Size(102, 20);
+            this.lblTimKiem.TabIndex = 0;
+            this.lblTimKiem.Text = "TÌM KIẾM :";
             // 
-            // txtTimkiem
+            // txtTimKiem
             // 
-            this.txtTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimkiem.Location = new System.Drawing.Point(273, 50);
-            this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.Size = new System.Drawing.Size(256, 27);
-            this.txtTimkiem.TabIndex = 1;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(273, 50);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(256, 27);
+            this.txtTimKiem.TabIndex = 1;
             // 
             // btnTimKiem
             // 
@@ -281,8 +281,8 @@
             this.Controls.Add(this.btnXoaTaiKhoan);
             this.Controls.Add(this.btnThemTaiKhoan);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.txtTimkiem);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.lblTimKiem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -298,8 +298,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTimkiem;
+        private System.Windows.Forms.Label lblTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.Button btnThemTaiKhoan;

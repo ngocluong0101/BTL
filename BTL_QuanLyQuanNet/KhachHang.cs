@@ -50,6 +50,9 @@ namespace BTL_QuanLyQuanNet
 
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
+            lblTimKiem.Visible = true;
+            txtTimKiem.Visible = true;
+            btnTimKiem.Visible = true;
             dgvLichSu.Visible = false;
             ThemTaiKhoan formThem = new ThemTaiKhoan();
             formThem.ShowDialog();
@@ -59,27 +62,30 @@ namespace BTL_QuanLyQuanNet
         private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
             dgvLichSu.Visible = false;
-            if (string.IsNullOrWhiteSpace(txtTimkiem.Text))
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản muốn xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 db.moKN();
-                string query = "delete KHACHHANG where Taikhoan = '" + txtTimkiem.Text + "'";
-                string Lichsu = "insert into LICHSU (Taikhoan, Mota) values ('" + txtTimkiem.Text + "', N'Đã được xóa.')";
+                string query = "delete KHACHHANG where Taikhoan = '" + txtTimKiem.Text + "'";
+                string Lichsu = "insert into LICHSU (Taikhoan, Mota) values ('" + txtTimKiem.Text + "', N'Đã được xóa.')";
                 SqlCommand cmd = new SqlCommand(query, db.GetConnection());
                 SqlCommand cmdLichsu = new SqlCommand(Lichsu, db.GetConnection());
                 cmd.ExecuteNonQuery();
                 cmdLichsu.ExecuteNonQuery();
                 db.dongKN();
-                MessageBox.Show("Đã xóa tài khoản '" + txtTimkiem.Text + "' thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã xóa tài khoản '" + txtTimKiem.Text + "' thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             Load_data();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            lblTimKiem.Visible = true;
+            txtTimKiem.Visible = true;
+            btnTimKiem.Visible = true;
             dgvLichSu.Visible = false;
             Sua formSua = new Sua();
             formSua.ShowDialog();
@@ -88,6 +94,9 @@ namespace BTL_QuanLyQuanNet
 
         private void btnNapTien_Click(object sender, EventArgs e)
         {
+            lblTimKiem.Visible = true;
+            txtTimKiem.Visible = true;
+            btnTimKiem.Visible = true;
             dgvLichSu.Visible = false;
             NapTien formNap = new NapTien();
             formNap.ShowDialog();
@@ -96,7 +105,7 @@ namespace BTL_QuanLyQuanNet
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             db.moKN();
-            string query = "select Taikhoan, Matkhau, Sodu from KHACHHANG where Taikhoan = '" + txtTimkiem.Text + "'";
+            string query = "select Taikhoan, Matkhau, Sodu from KHACHHANG where Taikhoan = '" + txtTimKiem.Text + "'";
             SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -106,6 +115,9 @@ namespace BTL_QuanLyQuanNet
         private void btnLichSu_Click(object sender, EventArgs e)
         {
             dgvLichSu.Visible = true;
+            lblTimKiem.Visible = false;
+            txtTimKiem.Visible = false;
+            btnTimKiem.Visible = false;
             Load_LichSu();
         }
 
