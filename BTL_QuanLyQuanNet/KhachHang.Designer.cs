@@ -98,6 +98,7 @@
             this.Column3});
             this.dgvKhachHang.Location = new System.Drawing.Point(68, 112);
             this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.ReadOnly = true;
             this.dgvKhachHang.RowHeadersVisible = false;
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -214,6 +215,7 @@
             this.Column6});
             this.dgvLichSu.Location = new System.Drawing.Point(68, 112);
             this.dgvLichSu.Name = "dgvLichSu";
+            this.dgvLichSu.ReadOnly = true;
             this.dgvLichSu.RowHeadersVisible = false;
             this.dgvLichSu.RowHeadersWidth = 51;
             this.dgvLichSu.RowTemplate.Height = 24;
