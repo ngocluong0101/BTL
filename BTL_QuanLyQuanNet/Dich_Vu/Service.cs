@@ -141,15 +141,24 @@ namespace BTL_QuanLyQuanNet.Dich_Vu
 
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
-            db.moKN();
-            string query = "insert into TK_ThuNhap (Mota, Sotien) values (N'Dịch vụ ăn uống'," + tongTien + ")";
-            SqlCommand cmd = new SqlCommand(query, db.GetConnection());
-            cmd.ExecuteNonQuery();
-            db.dongKN();
-            MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
-            dgvOrder.Rows.Clear();
-            tongTien = 0;
-            lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
+            if (dgvOrder.Rows.Count == 1)
+            {
+                MessageBox.Show("Vui lòng chọn món !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                db.moKN();
+                string query = "insert into TK_ThuNhap (Mota, Sotien) values (N'Dịch vụ ăn uống'," + tongTien + ")";
+                SqlCommand cmd = new SqlCommand(query, db.GetConnection());
+                cmd.ExecuteNonQuery();
+                db.dongKN();
+                MessageBox.Show("Dat Hang Thanh Cong!", "Thong bao");
+                dgvOrder.Rows.Clear();
+                tongTien = 0;
+                lblTongTien.Text = "Tổng tiền : " + tongTien.ToString("N0") + " đ";
+
+            }
+            
         }
     }
 }
