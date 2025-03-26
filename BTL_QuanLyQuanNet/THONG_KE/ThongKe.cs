@@ -113,7 +113,7 @@ namespace BTL_QuanLyQuanNet.THONG_KE
                     
                     string ngay = Convert.ToDateTime(row.Cells[0].Value).ToString("dd/MM/yyyy");
                     string moTa = row.Cells[1].Value.ToString();
-                    string soTien = Convert.ToInt32(row.Cells[2].Value).ToString("N0") + " đ"; // Định dạng số tiền
+                    string soTien = Convert.ToInt32(row.Cells[2].Value).ToString("N0") + " đ";
 
                     
                     g.DrawString(ngay, fontNormal, Brushes.Black, startX, startY);
