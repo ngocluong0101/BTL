@@ -64,7 +64,7 @@ namespace BTL_QuanLyQuanNet
             dgvLichSu.Visible = false;
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên tài khoản muốn xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập ( chọn ) tài khoản muốn xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -77,8 +77,10 @@ namespace BTL_QuanLyQuanNet
                 cmdLichsu.ExecuteNonQuery();
                 db.dongKN();
                 MessageBox.Show("Đã xóa tài khoản '" + txtTimKiem.Text + "' thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTimKiem.Text = "";
             }
             Load_data();
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -126,6 +128,14 @@ namespace BTL_QuanLyQuanNet
 
         }
 
-        
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
+                txtTimKiem.Text = row.Cells[0].Value.ToString().Trim();   
+            }
+        }
     }
 }
