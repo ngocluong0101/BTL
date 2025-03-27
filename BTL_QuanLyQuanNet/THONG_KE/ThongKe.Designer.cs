@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvThuNhap = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,22 +42,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHoaDon = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbDichVu = new System.Windows.Forms.RadioButton();
+            this.rdbNapTien = new System.Windows.Forms.RadioButton();
+            this.rdbTatCa = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuNhap)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvThuNhap
             // 
             this.dgvThuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThuNhap.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvThuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -108,7 +113,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(720, 145);
+            this.panel1.Location = new System.Drawing.Point(718, 189);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 168);
             this.panel1.TabIndex = 4;
@@ -195,11 +200,60 @@
             this.btnHoaDon.UseVisualStyleBackColor = false;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbTatCa);
+            this.groupBox1.Controls.Add(this.rdbNapTien);
+            this.groupBox1.Controls.Add(this.rdbDichVu);
+            this.groupBox1.Location = new System.Drawing.Point(750, 115);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(278, 59);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lọc theo";
+            // 
+            // rdbDichVu
+            // 
+            this.rdbDichVu.AutoSize = true;
+            this.rdbDichVu.Location = new System.Drawing.Point(18, 25);
+            this.rdbDichVu.Name = "rdbDichVu";
+            this.rdbDichVu.Size = new System.Drawing.Size(72, 20);
+            this.rdbDichVu.TabIndex = 0;
+            this.rdbDichVu.TabStop = true;
+            this.rdbDichVu.Text = "Dịch vụ";
+            this.rdbDichVu.UseVisualStyleBackColor = true;
+            this.rdbDichVu.CheckedChanged += new System.EventHandler(this.rdbDichVu_CheckedChanged);
+            // 
+            // rdbNapTien
+            // 
+            this.rdbNapTien.AutoSize = true;
+            this.rdbNapTien.Location = new System.Drawing.Point(104, 25);
+            this.rdbNapTien.Name = "rdbNapTien";
+            this.rdbNapTien.Size = new System.Drawing.Size(78, 20);
+            this.rdbNapTien.TabIndex = 0;
+            this.rdbNapTien.TabStop = true;
+            this.rdbNapTien.Text = "Nạp tiền";
+            this.rdbNapTien.UseVisualStyleBackColor = true;
+            this.rdbNapTien.CheckedChanged += new System.EventHandler(this.rdbNapTien_CheckedChanged);
+            // 
+            // rdbTatCa
+            // 
+            this.rdbTatCa.AutoSize = true;
+            this.rdbTatCa.Location = new System.Drawing.Point(197, 25);
+            this.rdbTatCa.Name = "rdbTatCa";
+            this.rdbTatCa.Size = new System.Drawing.Size(66, 20);
+            this.rdbTatCa.TabIndex = 1;
+            this.rdbTatCa.TabStop = true;
+            this.rdbTatCa.Text = "Tất cả";
+            this.rdbTatCa.UseVisualStyleBackColor = true;
+            this.rdbTatCa.CheckedChanged += new System.EventHandler(this.rdbTatCa_CheckedChanged);
+            // 
             // ThongKe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 563);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -214,6 +268,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuNhap)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +288,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHoaDon;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbNapTien;
+        private System.Windows.Forms.RadioButton rdbDichVu;
+        private System.Windows.Forms.RadioButton rdbTatCa;
     }
 }

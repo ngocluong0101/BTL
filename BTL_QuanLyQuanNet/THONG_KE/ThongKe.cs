@@ -47,15 +47,38 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             db.dongKN();
             TongThu();
         }
+        private void Load_Data_TheoBoLoc()
+        {
+            string TuNgay = dtpTuNgay.Value.ToString("yyyy/MM/dd");
+            string DenNgay = dtpDenNgay.Value.ToString("yyyy/MM/dd");
+            string Boloc = "";
+            if (rdbDichVu.Checked)
+            {
+                Boloc = "and Mota like N'%Dịch vụ%'";
+            }
+            else if (rdbNapTien.Checked)
+            {
+                Boloc = "and Mota like N'%Nạp tiền%'";
+            }
+            string query = $"select Thoigian, Mota, Sotien from TK_ThuNhap where Thoigian between '{TuNgay}' and '{DenNgay}'";
+            db.moKN();
+            query = query + Boloc;
+            SqlDataAdapter adt = new SqlDataAdapter(query, db.GetConnection());
+            DataTable dt = new DataTable();
+            adt.Fill(dt);
+            dgvThuNhap.DataSource= dt;
+            db.dongKN();
+            TongThu();
+        }
 
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
-            Load_Data_TheoNgay();
+            Load_Data_TheoBoLoc();
         }
 
         private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
         {
-            Load_Data_TheoNgay();
+            Load_Data_TheoBoLoc();
         }
         private void TongThu()
         {
@@ -128,5 +151,28 @@ namespace BTL_QuanLyQuanNet.THONG_KE
             g.DrawString($"Tổng thu: {txtTongThu.Text}", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, startX, startY);
         }
 
+        private void rdbDichVu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbDichVu.Checked)
+            {
+                Load_Data_TheoBoLoc();
+            }
+        }
+
+        private void rdbNapTien_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbNapTien.Checked)
+            {
+                Load_Data_TheoBoLoc();
+            }
+        }
+
+        private void rdbTatCa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbTatCa.Checked)
+            {
+                Load_Data_TheoBoLoc();
+            }
+        }
     }
 }
