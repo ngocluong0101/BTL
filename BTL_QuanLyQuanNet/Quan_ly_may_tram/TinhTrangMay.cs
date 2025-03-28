@@ -30,7 +30,7 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
             return tabControl.TabPages
                 .Cast<TabPage>()
                 .SelectMany(tp => tp.Controls.OfType<Button>())
-                .Where(btn => btn.Name.StartsWith("button"))
+                .Where(btn => btn.Text.StartsWith("Máy"))
                 .ToList();
         }
         private Dictionary<TabPage, double> zonePrices = new Dictionary<TabPage, double>();

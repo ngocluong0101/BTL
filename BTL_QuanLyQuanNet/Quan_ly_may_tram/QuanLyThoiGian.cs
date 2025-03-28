@@ -50,6 +50,7 @@ namespace BTL_QuanLyQuanNet.Quan_ly_may_tram
             SqlCommand cmd = new SqlCommand(query, db.GetConnection());
             cmd.ExecuteNonQuery();
             db.dongKN();
+            MessageBox.Show("Tắt máy thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Load_Data();
         }
 

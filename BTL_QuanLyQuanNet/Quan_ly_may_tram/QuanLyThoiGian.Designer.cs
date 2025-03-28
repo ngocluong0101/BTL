@@ -116,7 +116,6 @@
             this.Somay.HeaderText = "Số máy";
             this.Somay.MinimumWidth = 6;
             this.Somay.Name = "Somay";
-            this.Somay.ReadOnly = true;
             // 
             // Column2
             // 
@@ -124,7 +123,6 @@
             this.Column2.HeaderText = "Tài khoản";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
@@ -132,7 +130,6 @@
             this.Column3.HeaderText = "Loại";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -140,7 +137,6 @@
             this.Column4.HeaderText = "Thời gian còn lại";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
@@ -148,7 +144,6 @@
             this.Column5.HeaderText = "Số dư";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // label1
             // 
